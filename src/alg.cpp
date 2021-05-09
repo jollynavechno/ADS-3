@@ -49,7 +49,7 @@ cstack.pop();
 pst.pop_back();
 return pst;
 }
-int eval(std::string pst) {
+int eval(string pst) {
 TStack<int> istack;
 for (int i = 0; i < pst.length(); i++) {
 if (pst[i] >= '0' && pst[i] <= '9')
