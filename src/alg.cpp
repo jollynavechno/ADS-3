@@ -3,20 +3,20 @@
 
 using namespace std;
 
-static int Priority(char c) {
+int Priority(char c) {
 if (c == '*' || c == '/') {
-return 3;
+return 2;
 } else {
 if (c == '+' || c == '-') {
-return 2;
+return 1;
 } else {
 return 0;
 }
 }
 }
-std::string infx2pstfx(std::string inf) {
+string infx2pstfx(string inf) {
 TStack<char> cstack;
-std::string pst;
+string pst;
 for (int i = 0; i < inf.length(); ++i) {
 if ((inf[i] >= '0') && (inf[i] <= '9')) {
 pst += inf[i];
