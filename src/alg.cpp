@@ -1,7 +1,6 @@
+// Copyright 2021 NNTU-CS
 #include <iostream>
 #include "tstack.h"
-
-using namespace std;
 
 int Priority(char c) {
 if (c == '*' || c == '/') {
@@ -14,9 +13,9 @@ return 0;
 }
 }
 }
-string infx2pstfx(string inf) {
+std::string infx2pstfx(std::string inf) {
 TStack<char> cstack;
-string pst;
+std::string pst;
 for (int i = 0; i < inf.length(); ++i) {
 if ((inf[i] >= '0') && (inf[i] <= '9')) {
 pst += inf[i];
@@ -49,11 +48,11 @@ cstack.pop();
 pst.pop_back();
 return pst;
 }
-int eval(string pst) {
+int eval(std::string pst) {
 TStack<int> istack;
 for (int i = 0; i < pst.length(); i++) {
 if (pst[i] >= '0' && pst[i] <= '9')
-istack.push(pst[i]);
+istack.push(pst[i] - '0');
 else if (pst[i] != ' ') {
 int var1 = istack.get();
 istack.pop();
