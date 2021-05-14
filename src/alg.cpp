@@ -14,7 +14,7 @@ return 0;
 }
 }
 std::string infx2pstfx(std::string inf) {
-TStack<char> cstack;
+TStack<char> cstack; //tr
 std::string pst;
 for (int i = 0; i < inf.length(); ++i) {
 if ((inf[i] >= '0') && (inf[i] <= '9')) {
